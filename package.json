@@ -6,7 +6,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "tauri": "tauri dev",
     "tauri:b": "tauri build"
   },
   "dependencies": {
