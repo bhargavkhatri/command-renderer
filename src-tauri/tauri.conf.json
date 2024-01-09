@@ -1,0 +1,68 @@
+{
+  "build": {
+    "beforeDevCommand": "yarn cross-env BROWSER=none yarn start",
+    "beforeBuildCommand": "yarn build",
+    "devPath": "http://localhost:3000",
+    "distDir": "../build"
+  },
+  "package": {
+    "productName": "tauri-web",
+    "version": "0.0.0"
+  },
+  "tauri": {
+    "systemTray": {
+      "iconPath": "icons/icon.png",
+      "iconAsTemplate": true
+    },
+    "allowlist": {
+      "all": true,
+      "shell": {
+        "all": true,
+        "execute": true,
+        "sidecar": true,
+        "open": true,
+        "scope": [
+          {
+            "name": "ls -lah",
+            "cmd": "ls",
+            "args": ["-lah"]
+          },
+          {
+            "name": "mkdir",
+            "cmd": "mkdir",
+            "args": ["test"]
+          },
+          {
+            "name": "echo",
+            "cmd": "echo",
+            "args": ["Hello, i am the best!"]
+          }
+        ]
+      }
+    },
+    "bundle": {
+      "active": true,
+      "targets": "all",
+      "identifier": "",
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ]
+    },
+    "security": {
+      "csp": null
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "resizable": true,
+        "title": "tauri-web",
+        "width": 800,
+        "height": 600
+      }
+    ]
+  }
+}
