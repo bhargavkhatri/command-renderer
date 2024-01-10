@@ -12,6 +12,9 @@
   "tauri": {
     "updater": {
       "active": true,
+      "endpoints": [
+        "https://releases.myapp.com/linux/x86_64/1.0"
+      ],
       "dialog": true,
       "pubkey": "/Users/bhargav/.tauri/myapp.key.pub"
     },
