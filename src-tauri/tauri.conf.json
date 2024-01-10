@@ -10,14 +10,6 @@
     "version": "0.0.0"
   },
   "tauri": {
-    "updater": {
-      "active": true,
-      "endpoints": [
-        "https://releases.myapp.com/linux/x86_64/1.0"
-      ],
-      "dialog": true,
-      "pubkey": "/Users/bhargav/.tauri/myapp.key.pub"
-    },
     "systemTray": {
       "iconPath": "icons/icon.png",
       "iconAsTemplate": true
