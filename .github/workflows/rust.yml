@@ -63,7 +63,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ needs.create_release.outputs.upload_url }}
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_name: tauri-web_0.0.0_amd64.deb
           asset_path: /home/runner/work/command-renderer/command-renderer/src-tauri/target/release/bundle/deb/tauri-web_0.0.0_amd64.deb
           asset_content_type: application/octet-stream
