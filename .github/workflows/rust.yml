@@ -46,9 +46,9 @@ jobs:
 
       - name: Build the app
         uses: tauri-apps/tauri-action@v0
-        
-      - name: Download the app
-        uses: actions/download-artifact@v4
+
+      - name: Upload release assets
+        uses: actions/upload-release-asset@v1
           
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -59,4 +59,7 @@ jobs:
           releaseBody: 'See the assets to download and install this version.'
           releaseDraft: true
           prerelease: false
-          path: /home/runner/work/command-renderer/command-renderer/src-tauri/target/release/bundle/deb/tauri-web_0.0.0_amd64.deb
+          upload_url: ${{ needs.create_release.outputs.upload_url }}
+          asset_name: tauri-web_0.0.0_amd64.deb
+          asset_path: /home/runner/work/command-renderer/command-renderer/src-tauri/target/release/bundle/deb/tauri-web_0.0.0_amd64.deb
+          asset_content_type: application/octet-stream
